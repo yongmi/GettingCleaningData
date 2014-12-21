@@ -2,7 +2,7 @@
 # Course Project
 # 2014-12-18
 
-setwd("~/Documents/Coursera/DataScienceTrack/GettingCleaningData/CourseProject")
+setwd("~/Documents/Coursera/DataScienceTrack/GettingCleaningData/CourseProject/GettingCleaningData")
 
 # 1. Merges the training and the test sets to create one data set.
 # 2. Extracts only the measurements on the mean and standard deviation for each measurement. 
