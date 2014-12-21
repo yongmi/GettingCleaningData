@@ -41,7 +41,7 @@ combo$activity <- NULL
 
 myfeatures$feature.NAME <- make.names(myfeatures$fname)
 myfeatures$feature.NAME <- gsub("[[:punct:]]{3}", ".", myfeatures$feature.NAME)
-names(combo)[3:68] <- myfeatures$feature.NAME
+names(combo)[2:67] <- myfeatures$feature.NAME
 
 combo2 <- melt(combo, id=c("SID","activity.NAME"))
 combo2<-rename(combo2, c(variable="feature"))
