@@ -12,10 +12,10 @@ transformations performed to clean up the data). Files must be readable using
 read.table().
 
 The script initially merges three types of data:
-1) text file identifying sbuject who performed the activity for each window sample.
+* text file identifying sbuject who performed the activity for each window sample.
 Its range is from 1 to 30.
-2) text file with 561 columns and a row for each activity for each window sample.
-3) text file with the activity label for each activity for each window sample.
+* text file with 561 columns and a row for each activity for each window sample.
+* text file with the activity label for each activity for each window sample.
 
 The merge requires additional files, one with a list of all the features, and
 another linking the activity labels with the activity name.
