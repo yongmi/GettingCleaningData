@@ -13,6 +13,8 @@ setwd("~/Documents/Coursera/DataScienceTrack/GettingCleaningData/CourseProject")
 
 library(dplyr)
 library(stringr)
+library(reshape)
+
 features<-read.table("UCI HAR Dataset/features.txt", stringsAsFactors=FALSE)
 actnames<-read.table("UCI HAR Dataset/activity_labels.txt", stringsAsFactors=FALSE, col.names=c("activity", "activity.NAME"))
 colnames(features) <- c("fid", "fname")
@@ -35,4 +37,15 @@ testcombo <- cbind(subject, acts, testset2)
 testcombo2 <- inner_join(testcombo, actnames)
 
 combo = rbind(traincombo2, testcombo2)
-# writeltable(row.name=FALSE)
+combo$activity <- NULL
+
+myfeatures$feature.NAME <- make.names(myfeatures$fname)
+myfeatures$feature.NAME <- gsub("[[:punct:]]{3}", ".", myfeatures$feature.NAME)
+names(combo)[3:68] <- myfeatures$feature.NAME
+
+combo2 <- melt(combo, id=c("SID","activity.NAME"))
+combo2<-rename(combo2, c(variable="feature"))
+subjects <- group_by(combo2, SID, activity.NAME, feature)
+allmeans <- summarise(subjects, feature.mean=mean(value))
+
+write.table(allmeans, file = "tidydata.txt", row.name=FALSE)
