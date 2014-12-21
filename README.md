@@ -24,4 +24,4 @@ As the HAR Dataset comes split into training and test data, these two types of d
 are combined into one file after each undergoes the merge described above. The
 combined data file is then changed into long format, from which the average of 
 each variable for each activity and each subject is computed. The results are 
-saves into the same directory as the script using write.table().
+saved into the same directory as the script using write.table().
