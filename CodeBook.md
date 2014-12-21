@@ -19,15 +19,17 @@ familiar with the original data and its documentation could easily recognize
 the renamed R variables.
 
 ## Variables in tidy data
-+ SID: unique identifier for subject. Ranges from 1 to 30.
-+ activity.NAME
+SID: unique identifier for subject. Ranges from 1 to 30.
+
+activity.NAME
 - WALKING
 - WALKING_UPSTAIRS
 - WALKING_DOWNSTAIRS
 - SITTING
 - STANDING
 - LAYING
-+ feature : takes on one of 66 values that are the variable names in intermediate merged file
+
+feature : takes on one of 66 values that are the variable names in intermediate merged file
 - tBodyAcc.mean.X
 - tBodyAcc.mean.Y
 - tBodyAcc.mean.Z
@@ -94,4 +96,5 @@ the renamed R variables.
 - fBodyBodyGyroMag.std..
 - fBodyBodyGyroJerkMag.mean..
 - fBodyBodyGyroJerkMag.std..
-+ feature.mean : mean value of feature, for each subject and activity
+
+feature.mean : mean value of feature, for each subject and activity
